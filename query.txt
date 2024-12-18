@@ -1,0 +1,20 @@
+->for users or login:
+
+create table users (
+  id uuid primary key references auth.users not null,
+  email text unique not null,
+  username text unique not null,
+  created_at timestamp default now()
+);
+
+
+
+
+->for products:
+
+
+create table products (
+  id serial primary key,
+  data jsonb,
+  created_at timestamp with time zone default current_timestamp
+);
